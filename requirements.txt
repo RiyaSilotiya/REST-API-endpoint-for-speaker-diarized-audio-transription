@@ -1,0 +1,16 @@
+scikit-learn>=0.24.0
+numpy>=1.19.5
+pandas>=1.1.5
+requests>=2.25.1
+matplotlib>=3.3.3
+pyannote.audio
+openai-whisper
+ffmpeg 
+langdetect
+pydub
+Pipeline 
+whisper 
+SpeechRecognition
+
+# transformers>=4.0
+# tensorflow>=2.4.0 
