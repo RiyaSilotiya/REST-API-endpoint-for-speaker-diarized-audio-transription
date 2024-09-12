@@ -48,20 +48,40 @@ Postman Testing: The API is tested and can be easily interacted with using Postm
     python manage.py runserver
     ```
 
+
 ## API Endpoints
 
-### POST /api/transcribe/
+### POST
 
-Upload an audio file to be diarized and transcribed. The API will return a JSON response containing:
-
-- **Transcriptions**
-- **Speaker segments with timestamps**
-- **Speaker labels**
+Upload an audio file. The API will return a JSON response containing:
 
 #### Request
 
-```bash
-POST /api/transcribe/
-Content-Type: multipart/form-data
-File: <audio-file>
+In Postman:
+1. **Method:** POST
+2. **URL:** `http://127.0.0.1:8000/predicts/`
+3. **Body:** Select **form-data**
+    - **Key:** `audio_file` (set the type to `File`)
+    - **Value:** Click `Choose Files` and select the audio file you want to upload.
 
+#### Response
+
+**Example JSON Response:**
+```json
+{
+    "speaker_info": [
+        {
+            "speaker": "Speaker 1",
+            "start": 0.0000,
+            "end": 10.0000,
+            "transcription": "Hello, how are you?"
+        },
+        {
+            "speaker": "Speaker 2",
+            "start": 10.0000,
+            "end": 20.0000,
+            "transcription": "I'm good, thanks."
+        }
+    ],
+    "overall_transcription": "Complete transcription of the audio."
+}
